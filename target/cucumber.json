@@ -1,0 +1,75 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2026-05-08T14:47:10.194Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1245542400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "utils.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 4,
+        "name": "Add product",
+        "description": "",
+        "id": "account-feature;add-product",
+        "after": [
+          {
+            "result": {
+              "duration": 292059300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "utils.Hooks.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 40197123800,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User launch URL",
+            "match": {
+              "location": "Steps.LoginSteps.user_launch_url()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 94557586400,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User clicks on Home link",
+            "match": {
+              "location": "Steps.LoginSteps.user_clicks_on_home_link()"
+            },
+            "keyword": "When "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@firstTest"
+          }
+        ]
+      }
+    ],
+    "name": "Account feature",
+    "description": "",
+    "id": "account-feature",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/Login.feature",
+    "tags": []
+  }
+]

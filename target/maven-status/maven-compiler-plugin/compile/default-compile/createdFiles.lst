@@ -1,0 +1,6 @@
+pages\LoginPage.class
+pages\HomePage.class
+utils\TestBaseCommon.class
+utils\BrowserUtils.class
+utils\Hooks.class
+utils\SeleniumWrapper.class
