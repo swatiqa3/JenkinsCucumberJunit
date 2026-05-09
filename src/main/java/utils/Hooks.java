@@ -22,18 +22,17 @@ public class Hooks {
 	@Before
 	public void setUp() {
 		  String browser = System.getProperty("Browser");
+		  if(browser == null  || browser.isEmpty() )
+			  browser = BrowserUtils.prop.getProperty("Browser");
+		  
 		  WebDriverManager.chromedriver().setup();
 		
-		//if(BrowserUtils.prop.getProperty("Browser").equalsIgnoreCase("Chrome"))
 		if(browser.equalsIgnoreCase("Chrome"))
-		{
-			
+		{			
 			driver = new ChromeDriver();
 		}
-		//else if(BrowserUtils.prop.getProperty("Browser").equalsIgnoreCase("FireFox"))
 		else if(browser.equalsIgnoreCase("FireFox"))
 		{
-			//WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 		}
 		objBrowserUtils.setDriver(driver);

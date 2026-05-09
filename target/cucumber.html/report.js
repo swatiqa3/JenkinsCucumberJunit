@@ -5,12 +5,12 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.scenario({
-  "name": "Add product",
+  "name": "cart",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@firstTest"
+      "name": "@secondTest"
     }
   ]
 });
@@ -28,16 +28,18 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User clicks on Home link",
+  "name": "User clicks Cart link",
   "keyword": "When "
 });
 formatter.match({
-  "location": "Steps.LoginSteps.user_clicks_on_home_link()"
+  "location": "Steps.LoginSteps.user_clicks_on_cart_link()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.after({
   "status": "passed"
+});
+});"
 });
 });

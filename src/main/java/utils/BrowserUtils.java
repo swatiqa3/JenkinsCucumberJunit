@@ -29,8 +29,14 @@ public class BrowserUtils {
 		
 		prop = new Properties();
 		FileInputStream fis = null;
+		
+		String env = System.getProperty("Env");
+		if(env == null || env.isEmpty())
+			env = "Dev";
+			
+		
 		try {
-			fis = new FileInputStream("src/main/resources/Config.properties");
+			fis = new FileInputStream("src/main/resources/"+env+".properties");
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -3,11 +3,11 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2026-05-09T02:09:15.656Z",
+        "start_timestamp": "2026-05-09T02:40:36.642Z",
         "before": [
           {
             "result": {
-              "duration": 8337549100,
+              "duration": 5860959000,
               "status": "passed"
             },
             "match": {
@@ -15,14 +15,14 @@
             }
           }
         ],
-        "line": 4,
-        "name": "Add product",
+        "line": 11,
+        "name": "cart",
         "description": "",
-        "id": "account-feature;add-product",
+        "id": "account-feature;cart",
         "after": [
           {
             "result": {
-              "duration": 1049312500,
+              "duration": 2482038500,
               "status": "passed"
             },
             "match": {
@@ -35,10 +35,10 @@
         "steps": [
           {
             "result": {
-              "duration": 18582383700,
+              "duration": 1986114200,
               "status": "passed"
             },
-            "line": 5,
+            "line": 12,
             "name": "User launch URL",
             "match": {
               "location": "Steps.LoginSteps.user_launch_url()"
@@ -47,20 +47,20 @@
           },
           {
             "result": {
-              "duration": 7424958000,
+              "duration": 31105000,
               "status": "passed"
             },
-            "line": 6,
-            "name": "User clicks on Home link",
+            "line": 13,
+            "name": "User clicks Cart link",
             "match": {
-              "location": "Steps.LoginSteps.user_clicks_on_home_link()"
+              "location": "Steps.LoginSteps.user_clicks_on_cart_link()"
             },
             "keyword": "When "
           }
         ],
         "tags": [
           {
-            "name": "@firstTest"
+            "name": "@secondTest"
           }
         ]
       }
@@ -71,5 +71,7 @@
     "keyword": "Feature",
     "uri": "file:src/test/resources/features/Login.feature",
     "tags": []
+  }
+]gs": []
   }
 ]
