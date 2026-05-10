@@ -1,27 +1,26 @@
-package utils;
+package pages;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-import pages.HomePage;
-import pages.LoginPage;
+import utils.BrowserUtils;
 
-public class TestBaseCommon {
+public class BasePage {
 	
 	private BrowserUtils ObjBrowserUtils;
 	public HomePage ObjHomePage;
 	public LoginPage ObjLoginPage;
 	
-	public TestBaseCommon(BrowserUtils objBrowserUtils){
+	public BasePage(BrowserUtils objBrowserUtils){
 		this.ObjBrowserUtils = objBrowserUtils;
 	}
 	
-
-	public void initializePages() {		
-		ObjLoginPage = new LoginPage(ObjBrowserUtils.getDriver());
-	}
+//
+//	public void initializePages() {		
+//		ObjLoginPage = new LoginPage(ObjBrowserUtils.getDriver());
+//	}
 	
 
 	public HomePage getHomePage() {
