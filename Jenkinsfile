@@ -33,7 +33,11 @@ pipeline {
 
 		stage('Wait for Grid') {
 		    steps {
-		        bat 'timeout /t 15'
+		        bat '''
+		        echo Waiting for Selenium Grid...
+		
+		        powershell -Command "Start-Sleep -Seconds 15"
+		        '''
 		    }
 		}
 
