@@ -27,20 +27,26 @@ pipeline {
 
         stage('Start Selenium Grid') {
             steps {
-                sh 'docker compose up -d'
+                bat 'docker compose up -d'
             }
         }
 
         stage('Wait for Grid') {
             steps {
-                sh '''
-                echo "Waiting for Selenium Grid..."
+                bat '''
+                echo Waiting for Selenium Grid...
 
-                timeout 60 bash -c '
-                until curl -s http://localhost:4444/wd/hub/status | grep "ready"; do
-                    sleep 2
-                done
-                '
+                powershell -Command ^
+                "for ($i=0; $i -lt 30; $i++) { ^
+                    try { ^
+                        $resp = Invoke-RestMethod http://localhost:4444/wd/hub/status; ^
+                        if ($resp.value.ready -eq $true) { ^
+                            Write-Host 'Grid is ready'; exit 0 ^
+                        } ^
+                    } catch {} ^
+                    Start-Sleep -Seconds 2 ^
+                } ^
+                Write-Host 'Grid not ready in time'; exit 1"
                 '''
             }
         }
@@ -48,10 +54,10 @@ pipeline {
         stage('Run Tests') {
             steps {
 
-                sh """
-                mvn clean test \
-                -Denvironment=${params.ENVIRONMENT} \
-                -Dbrowser=${params.BROWSER}
+                bat """
+                mvn clean test ^
+                -Denvironment=%ENVIRONMENT% ^
+                -Dbrowser=%BROWSER%
                 """
             }
         }
@@ -63,7 +69,7 @@ pipeline {
 
             junit '**/surefire-reports/*.xml'
 
-            sh 'docker compose down'
+            bat 'docker compose down'
         }
     }
 }
